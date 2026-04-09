@@ -3,7 +3,7 @@ def draw_constellation(stars: list[tuple[int, int]], size: int) -> list[str]:
 	for y in range(size):
 		result.append("")
 		for x in range(size):
-			if (x, y) in stars:
+			if (y, x) in stars:
 				result[y] += "*"
 			else:
 				result[y] += "."
