@@ -20,13 +20,17 @@ def package_dependency_solver(packages: dict[str, list[str]]) -> list[str]:
 	result = sorted(result)
 
 	reset = True
+	new_packages_list: list[str] = []
 	while reset:
 		reset = False
 		for p1, d1 in packages.items():
 			if set(d1) <= set(result) and p1 not in result:
-				result.append(p1)
+				new_packages_list.append(p1)
 				reset = True
 				break
+		new_packages_list = sorted(new_packages_list)
+		result.extend(new_packages_list)
+		new_packages_list.clear()
 
 	return result
 
