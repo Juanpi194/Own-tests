@@ -12,12 +12,12 @@ def spiral_no_se_que(size: int) -> list[list[int]]:
 		while x <= size - 1 and count < size * size + 1:
 			matrix[y][x] = count
 			count += 1
-			if x == size - 1 or matrix[y][x + 1] != 0:
+			if x == size - 1 or matrix[y][x + 1] != 0:	# Can't go right
 				y += 1
 				break
 			x += 1
 		
-		while y <= size - 1 and count < size * size + 1:
+		while y <= size - 1 and count < size * size + 1:	# Can0t go down
 			matrix[y][x] = count
 			count += 1
 			if y == size - 1 or matrix[y + 1][x] != 0:
@@ -25,7 +25,7 @@ def spiral_no_se_que(size: int) -> list[list[int]]:
 				break
 			y += 1
 
-		while x >= 0 and count < size * size + 1:
+		while x >= 0 and count < size * size + 1:	# Can't go left
 			matrix[y][x] = count
 			count += 1
 			if x == 0 or matrix[y][x - 1] != 0:
@@ -33,7 +33,7 @@ def spiral_no_se_que(size: int) -> list[list[int]]:
 				break
 			x -= 1
 
-		while y >= 0 and count < size * size + 1:
+		while y >= 0 and count < size * size + 1:	#	Can't go up
 			matrix[y][x] = count
 			count += 1
 			if y == 0 or matrix[y - 1][x] != 0:

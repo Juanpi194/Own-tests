@@ -16,7 +16,6 @@ def compressor_decompressor(data: str, operation: str) -> str:
 		result += f"{last_c}{count}" if count > 1 else last_c
 		return result
 
-
 	def decompress(s: str) -> str:
 		...
 
@@ -29,8 +28,7 @@ def compressor_decompressor(data: str, operation: str) -> str:
 	return decompress(data)
 
 
-
 print(compressor_decompressor("aaabbc", "compress"))
-# aaaaaaaaaaaaaa -> a9a4 
+# aaaaaaaaaaaaaa -> a9a4
 # aaabbc -> a3b2c
 # b2c2 -> bbcc
